@@ -13,62 +13,41 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            padding: 10px; /* 添加边距以避免内容贴边 */
         }
         h1 {
             color: #333;
             margin-bottom: 20px;
-            text-align: center; /* 确保标题在小屏幕上居中 */
+            font-size: 48px; /* 修改为原来两倍 */
         }
         input[type="text"] {
             padding: 10px;
-            font-size: 16px;
+            font-size: 32px; /* 修改为原来两倍 */
             border: 2px solid #ccc;
             border-radius: 5px;
-            width: 100%; /* 适配不同屏幕 */
-            max-width: 400px; /* 设置最大宽度 */
+            width: 300px;
             margin-bottom: 10px;
-            box-sizing: border-box; /* 确保内边距和边框不超出宽度 */
         }
         button {
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 32px; /* 修改为原来两倍 */
             color: #fff;
             background-color: #007BFF;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             margin-top: 10px;
-            width: 100%; /* 适配不同屏幕 */
-            max-width: 200px; /* 设置最大宽度 */
         }
         button:hover {
             background-color: #0056b3;
         }
         p {
             margin-top: 20px;
-            font-size: 16px;
+            font-size: 32px; /* 修改为原来两倍 */
             color: #333;
             white-space: pre-line;
             text-align: center;
-            padding: 0 10px; /* 添加左右内边距 */
         }
 
-        /* 媒体查询: 适配小屏幕 */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 24px; /* 减小标题大小 */
-            }
-            input[type="text"] {
-                font-size: 14px; /* 减小字体大小 */
-            }
-            button {
-                font-size: 14px; /* 减小按钮字体大小 */
-            }
-            p {
-                font-size: 14px; /* 减小结果文本大小 */
-            }
-        }
     </style>
 </head>
 <body>
