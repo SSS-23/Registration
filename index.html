@@ -13,18 +13,22 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
+            padding: 10px; /* 添加边距以避免内容贴边 */
         }
         h1 {
             color: #333;
             margin-bottom: 20px;
+            text-align: center; /* 确保标题在小屏幕上居中 */
         }
         input[type="text"] {
             padding: 10px;
             font-size: 16px;
             border: 2px solid #ccc;
             border-radius: 5px;
-            width: 300px;
+            width: 100%; /* 适配不同屏幕 */
+            max-width: 400px; /* 设置最大宽度 */
             margin-bottom: 10px;
+            box-sizing: border-box; /* 确保内边距和边框不超出宽度 */
         }
         button {
             padding: 10px 20px;
@@ -35,6 +39,8 @@
             border-radius: 5px;
             cursor: pointer;
             margin-top: 10px;
+            width: 100%; /* 适配不同屏幕 */
+            max-width: 200px; /* 设置最大宽度 */
         }
         button:hover {
             background-color: #0056b3;
@@ -45,6 +51,23 @@
             color: #333;
             white-space: pre-line;
             text-align: center;
+            padding: 0 10px; /* 添加左右内边距 */
+        }
+
+        /* 媒体查询: 适配小屏幕 */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px; /* 减小标题大小 */
+            }
+            input[type="text"] {
+                font-size: 14px; /* 减小字体大小 */
+            }
+            button {
+                font-size: 14px; /* 减小按钮字体大小 */
+            }
+            p {
+                font-size: 14px; /* 减小结果文本大小 */
+            }
         }
     </style>
 </head>
@@ -88,7 +111,7 @@
             }
 
             // 如果两张表中都未找到
-            document.getElementById('result').innerHTML = 'We seem to be having trouble locating your registration.<br><br>Do not worry. Just try again.<br>Kindly double check that the name you entered matches the one you used when you registered, paying close attention to capitalization.<br><br>If you are still having trouble, please feel free to take a seat at any available table and let our staff know. Thank you for your patience!';
+            document.getElementById('result').innerHTML = 'We seem to be having trouble locating your registration.<br>Do not worry. <br>Just try again.<br>Kindly double check that the name you entered matches the one you used when you registered, paying close attention to capitalization.<br><br><br>If you are still having trouble, please feel free to take a seat at any available table and let our staff know. Thank you for your patience!';
         }
     </script>
 </body>
