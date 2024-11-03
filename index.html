@@ -3,6 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>WDES 2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+            white-space: pre-line;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome</h1>
@@ -44,7 +88,7 @@
             }
 
             // 如果两张表中都未找到
-            document.getElementById('result').innerText = 'We seem to be having trouble locating your registration. \n \n Do not worry. Just try again.  \n Kindly double check that the name you entered matches the one you used when you registered, paying close attention to capitalization.  \n \n If you are still having trouble, please feel free to take a seat at any available table and let our staff know.Thank you for your patience!';
+            document.getElementById('result').innerHTML = 'We seem to be having trouble locating your registration.<br><br>Do not worry. Just try again.<br>Kindly double check that the name you entered matches the one you used when you registered, paying close attention to capitalization.<br><br>If you are still having trouble, please feel free to take a seat at any available table and let our staff know. Thank you for your patience!';
         }
     </script>
 </body>
