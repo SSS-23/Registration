@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WDES 2024</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <input type="text" id="nameInput" placeholder="Please Enter Your Name:">
+    <button onclick="findSeat()">查询</button>
+    <p id="result"></p>
+
+    <script>
+        async function fetchSheetData(sheetId, range) {
+            const apiKey = 'AIzaSyAcVANPtUFAblaSd7l-4dUSRsfvQAHK1NE'; // 替换为你的 API Key
+            const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`);
+            const data = await response.json();
+            return data.values;
+        }
+
+        async function findSeat() {
+            const name = document.getElementById('nameInput').value.trim();
+
+            // 替换为你的 Google Sheets ID 和范围
+            const sheetId = '15PUAZoOP_wcnr2DoxgdDzz54B8kAeSj0RhC3Xn615vg';
+            const sheet1Range = 'PRINT!A:B'; // 第一张表的范围
+            const sheet2Range = 'FULL!A:A'; // 第二张表的范围
+
+            const sheet1Data = await fetchSheetData(sheetId, sheet1Range);
+            const sheet2Data = await fetchSheetData(sheetId, sheet2Range);
+
+            // 查找第一张表中的姓名
+            const matchInSheet1 = sheet1Data.find(row => row[0] === name);
+            if (matchInSheet1) {
+                document.getElementById('result').innerText = `Thank you for checking in. Please make your way to table number ${matchInSheet1[1]}`;
+                return;
+            }
+
+            // 查找第二张表中的姓名
+            const matchInSheet2 = sheet2Data.find(row => row[0] === name);
+            if (matchInSheet2) {
+                document.getElementById('result').innerText = 'Thank you for checking in. Please feel free to take a seat at any available table.';
+                return;
+            }
+
+            // 如果两张表中都未找到
+            document.getElementById('result').innerText = 'We seem to be having trouble locating your registration. But do not worry. Just try again.  <br> Please double check that the name you entered matches the one you used when you registered, paying close attention to capitalization.  <br> If you are still having trouble, please feel free to take a seat at any available table and let our staff know.Thank you for your patience!';
+        }
+    </script>
+</body>
+</html>
+
