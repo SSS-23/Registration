@@ -15,10 +15,15 @@
             margin: 0;
             padding: 30px;
         }
-        h1 {
+       h1 {
             color: #333;
             margin-bottom: 20px;
-            font-size: 48px; 
+            font-size: 100px; 
+        }
+       h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 50px; 
         }
         input[type="text"] {
             padding: 10px;
@@ -36,18 +41,18 @@
             border-radius: 20px;
             cursor: pointer;
             margin-top: 10px;
-          	align-self: left;
+          	 align-self: left;
             width: auto;
         }
         button:hover {
             background-color: #0056b3;
         }
         p {
-            margin-top: 20px;
-            font-size: 32px; 
+		    margin-top: 60px;
+            font-size: 100px; 
             color: #333;
             white-space: pre-line;
-            text-align: left; /* 改为左对齐 */
+            text-align: left; 
         }
 
     </style>
@@ -84,14 +89,14 @@
             // 查找第一张表中的姓名
             const matchInSheet1 = sheet1Data.find(row => row[0] === name);
             if (matchInSheet1) {
-                document.getElementById('result').innerText = `Thank you for checking in. Please make your way to table number ${matchInSheet1[1]}`;
+                document.getElementById('result').innerText = `Thank you for checking in. <br><br>Please make your way to table number ${matchInSheet1[1]}.`;
                 return;
             }
 
             // 查找第二张表中的姓名
             const matchInSheet2 = sheet2Data.find(row => row[0] === name);
             if (matchInSheet2) {
-                document.getElementById('result').innerText = 'Thank you for checking in. Please feel free to take a seat at any available table.';
+                document.getElementById('result').innerText = 'Thank you for checking in. <br><br>Please feel free to take a seat at any available table.';
                 return;
             }
 
