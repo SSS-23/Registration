@@ -27,11 +27,11 @@
         }
         input[type="text"] {
             padding: 10px;
-            font-size: 32px; 
-            border: 2px solid #ccc;
+            font-size: 64px; 
+            border: 15px solid;
             border-radius: 5px;
-            width: 300px;
-            margin-bottom: 10px;
+            width: 600px;
+            margin-bottom: 50px;
         }
         button {
             padding: 30px 60px;
@@ -89,14 +89,14 @@
             // 查找第一张表中的姓名
             const matchInSheet1 = sheet1Data.find(row => row[0] === name);
             if (matchInSheet1) {
-                document.getElementById('result').innerText = `Thank you for checking in. <br><br>Please make your way to table number ${matchInSheet1[1]}.`;
+                document.getElementById('result').innerText = `Thank you for checking in. Please make your way to table number ${matchInSheet1[1]}.`;
                 return;
             }
 
             // 查找第二张表中的姓名
             const matchInSheet2 = sheet2Data.find(row => row[0] === name);
             if (matchInSheet2) {
-                document.getElementById('result').innerText = 'Thank you for checking in. <br><br>Please feel free to take a seat at any available table.';
+                document.getElementById('result').innerHTML = 'Thank you for checking in. <br><br>Please feel free to take a seat at any available table.';
                 return;
             }
 
