@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询桌号</title>
+</head>
+<body>
+    <h1>输入姓名查询桌号</h1>
+    <input type="text" id="nameInput" placeholder="输入您的姓名">
+    <button onclick="findSeat()">查询</button>
+    <p id="result"></p>
+
+    <script>
+        const guestData = [
+            {"name": "张三", "seat": "A1"},
+            {"name": "李四", "seat": "B2"},
+            {"name": "王五", "seat": "C3"}
+        ];
+
+        function findSeat() {
+            const name = document.getElementById('nameInput').value.trim();
+            const guest = guestData.find(g => g.name === name);
+            if (guest) {
+                document.getElementById('result').innerText = `您的座位号是: ${guest.seat}`;
+            } else {
+                document.getElementById('result').innerText = '未找到该姓名，请重试。';
+            }
+        }
+    </script>
+</body>
+</html>
