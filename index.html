@@ -65,7 +65,7 @@
     <input type="text" id="nameInput">
     <br>  
     <br>
-    <button onclick="findSeat()">Check-in Now ^_^</button>
+    <button onclick="findSeat()">Check-in Now</button>
 
     <script>
         async function fetchSheetData(sheetId, range) {
@@ -101,7 +101,7 @@
             }
 
             // 如果两张表中都未找到
-            document.getElementById('result').innerHTML = 'We seem to be having trouble locating your registration.<br><br>Do not worry. <br><br>Just try again. Kindly double check that the name you entered matches the one you used when you registered, paying close attention to capitalization.<br><br><br>If you are still having trouble, please feel free to take a seat at any available table and let our staff know. Thank you for your patience!'
+            document.getElementById('result').innerHTML = 'We seem to be having trouble locating your registration.<br><br>Do not worry. <br><br>Just try again. Kindly double check that the name you entered matches the one you used when you registered, paying close attention to capitalization.<br><br><br>If you are still having trouble, please let our staff know. Thank you for your patience!'
         }
     </script>
 </body>
