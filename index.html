@@ -69,7 +69,7 @@
 
     <script>
         async function fetchSheetData(sheetId, range) {
-            const apiKey = 'AIzaSyAcVANPtUFAblaSd7l-4dUSRsfvQAHK1NE'; // 替换为你的 API Key
+            const apiKey = 'AIzaSyAcVANPtUFAblaSd7l-4dUSRsfvQAHK1NE'; 
             const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`);
             const data = await response.json();
             return data.values;
@@ -78,7 +78,7 @@
         async function findSeat() {
             const name = document.getElementById('nameInput').value.trim();
 
-            // 替换为你的 Google Sheets ID 和范围
+            // Google Sheets ID 
             const sheetId = '15PUAZoOP_wcnr2DoxgdDzz54B8kAeSj0RhC3Xn615vg';
             const sheet1Range = 'PRINT!A:B'; // 第一张表的范围
             const sheet2Range = 'FULL!A:A'; // 第二张表的范围
